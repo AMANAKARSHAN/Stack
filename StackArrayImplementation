@@ -1,0 +1,91 @@
+package Stack;
+
+
+class StackArray{
+	int top=0;
+	int MAX=10;
+
+	
+	 int [] a = new int[MAX];
+	
+	
+	
+	private boolean isFull() {
+		if(top>MAX)
+			return true;
+		
+		return false;
+	}
+	
+	
+	private boolean isEmpty() {
+		if(top==0)
+			return true;
+		
+		return false;
+	}
+	
+	public void push(int value) {
+		
+		if(isFull()){
+			System.out.println("Stack is Full");
+			return;}
+		
+		a[top++]=value;
+	  }
+	
+	
+	public int pop() {
+		if(isEmpty()) {
+			System.out.println("Stack is Empty");
+			return 0;
+		}
+		
+		return a[--top]; 
+	}
+	
+	public int peek() {
+		if(isEmpty()) {
+			System.out.println("Stack is Empty");
+			return 0;
+		}
+		return a[top];
+	}
+	
+	
+	public void printStack() {
+		
+		System.out.println("Element in Stack: ");
+		for(int i=0;i<=top;i++) {
+			System.out.print(a[i]+" ");
+		}
+		
+	}
+	
+	
+}
+
+
+public class StackArrayImplementation {
+
+	public static void main(String[] args) {
+		StackArray a = new StackArray();
+		a.push(24);
+		a.push(45);
+		a.push(5);
+		a.push(6);
+		a.push(34);
+		a.push(100);
+		
+		System.out.println(a.pop());
+		a.push(35);
+		a.push(98);
+		
+		System.out.println(a.pop());
+		System.out.println(a.pop());
+		a.printStack();
+		
+
+	}
+
+}
